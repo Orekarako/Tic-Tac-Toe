@@ -105,6 +105,7 @@ section.starting-game button:active {
   transform: scale(1.1);
 }
 section.starting-game .form-player-name input {
+  display: none;
   padding: 5px;
   width: 250px;
   font-size: 1.5rem;
@@ -130,4 +131,25 @@ section.starting-game ::placeholder {
   background-color: rgba(24, 102, 102, 0.877);
   outline: none;
   cursor: pointer;
+}
+
+.fireworks {
+  display: none;
+  text-align: center;
+  align-items: center;
+  width: 470px;
+  height: 470px;
+  background-color: rgba(248, 248, 83, 0.808);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fireworks h1 {
+  color: rgb(194, 2, 2);
+  font-size: 2rem;
+}
+.fireworks img {
+  width: 200px;
+  height: 200px;
 }

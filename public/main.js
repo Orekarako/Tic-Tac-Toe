@@ -9,6 +9,11 @@ const boardGameChild = boardGame === null || boardGame === void 0 ? void 0 : boa
 const btnStart = document.getElementById("btnStart");
 const gameStart = document.getElementById("startGameContainer");
 const resetBtnScore = document.querySelector(".btn-reset-score");
+const player1Name = document.getElementById("player1Name");
+const player2Name = document.getElementById("player2Name");
+const formPlayerName = document.getElementById("formPlayerName");
+const fireWorks = document.getElementById("fireWorks");
+const playerWinsH1 = document.getElementById("playerWinsH1");
 let turn = true;
 let score1 = 0, score2 = 0;
 const opinionToWin = [
@@ -17,16 +22,6 @@ const opinionToWin = [
     [1, 4, 7], [2, 5, 8],
     [2, 4, 6], [0, 4, 8]
 ];
-function getNameFromPlayer() {
-    const formPlayerName = document.getElementById("formPlayerName");
-    const player1Name = document.getElementsByName("player1Name");
-    const player2Name = document.getElementsByName("player2Name");
-    const playerName = ["player1", "player2"];
-    formPlayerName === null || formPlayerName === void 0 ? void 0 : formPlayerName.addEventListener("change", (event) => {
-        console.log(event);
-        console.log(event);
-    });
-}
 function startGame() {
     btnStart === null || btnStart === void 0 ? void 0 : btnStart.addEventListener('click', () => {
         gameStart.style.display = "none";
@@ -43,7 +38,7 @@ function resetButton() {
 }
 function resetBoard() {
     for (let i = 0; i < 9; i++) {
-        boardGameChild[i].innerText = '';
+        boardGameChild[i].textContent = '';
     }
     console.log("Reset Board");
 }
@@ -96,13 +91,18 @@ function winGame(playerWin) {
     if (playerWin === 1) {
         score1++;
         scorePlayer1score.textContent = score1.toString();
-        alert("Player 1 Wins");
+        fireWorks.style.display = "flex";
+        playerWinsH1.textContent = "player 1";
     }
     else if (playerWin === 2) {
         score2++;
         scorePlayer2score.textContent = score2.toString();
-        alert("Player 2 Wins");
+        fireWorks.style.display = "flex";
+        playerWinsH1.textContent = "player 2";
     }
+    setInterval(() => {
+        fireWorks.style.display = "none";
+    }, 3000);
     resetBoard();
 }
 function resetScore() {
@@ -113,5 +113,16 @@ function resetScore() {
         scorePlayer2score.textContent = score2.toString();
     });
 }
-getNameFromPlayer();
+function getNameFromPlayers() {
+    btnStart.addEventListener("click", (e) => {
+        if (player1Name.value === "" || player2Name.value === "") {
+            console.log("no fill names");
+        }
+        else {
+            scorePlayer1.innerHTML = `${player1Name.value} :<br><span id="player1Score">0</span>`;
+            scorePlayer2.innerHTML = `${player2Name.value} :<br><span id="player2Score">0</span>`;
+        }
+    });
+}
+getNameFromPlayers();
 startGame();

@@ -38,17 +38,30 @@
         </div>
 
         <button class="btn-reset-score">Reset Score</button>
+
+        <div class="fireworks" id="fireWorks"> 
+
+                <img src="./imgs/fireworks.gif" alt="">
+                <div>
+                    <h1 id="playerWinsH1">Player 2 </h1>
+                    <h1> Wins !</h1>
+                </div>
+
+                <img src="./imgs/fireworks.gif" alt="">
+        </div>
     </section>
 
     <section class="starting-game" id="startGameContainer" >
         <h1>Welcome to Tic Tac Game</h1>
         <form id="formPlayerName" class="form-player-name">
-            <input type="text" name="player1Name" placeholder="name:player1">
-            <input type="text" name="player2Name" placeholder="name:player2">
+            <input type="text" id="player1Name" placeholder="name:player1">
+            <input type="text" id="player2Name" placeholder="name:player2">
         </form>
         <button id="btnStart">Click Here To Start</button>
     </section>
     <script src="./main.js"></script>
+
+
 </body>
 
 </html>
