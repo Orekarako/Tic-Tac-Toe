@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- Link Css style Sheet -->
+    <link rel="stylesheet" href="./style.css">
+    <title>tic-tac Game</title>
+</head>
+
+<body>
+    <section class="container">
+        <header>
+            <h1 class="game-title">Tic Tac Game</h1>
+            <div class="score-player">
+                <div class="score-player1">Player1 <br><span id="player1Score">0</span> </div>
+                <div class="score-player2">Player2<br><span id="player2Score">0</span> </div>
+            </div>
+            <button class="btn-reset" id="btnReset">Reset Game</button>
+        </header>
+
+        <div class="board-game" id="boardGame">
+            <div>x</div>
+            <div>o</div>
+            <div>x</div>
+            <div>o</div>
+            <div>x</div>
+            <div>x</div>
+            <div>o</div>
+            <div>o</div>
+            <div>o</div>
+        </div>
+
+        <button class="btn-reset-score">Reset Score</button>
+    </section>
+
+    <section class="starting-game" id="startGameContainer" >
+        <h1>Welcome to Tic Tac Game</h1>
+        <form id="formPlayerName" class="form-player-name">
+            <input type="text" name="player1Name" placeholder="name:player1">
+            <input type="text" name="player2Name" placeholder="name:player2">
+        </form>
+        <button id="btnStart">Click Here To Start</button>
+    </section>
+    <script src="./main.js"></script>
+</body>
+
+</html>
